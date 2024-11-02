@@ -1,12 +1,18 @@
 import { useState } from "react";
 
 const TodoNew = (props) => {
-  console.log({ props });
+  // console.log({ props });
   const { addNewTodo } = props;
 
   // const handleOnChange = (event) => {
   //   console.log(event.target.value);
   // };
+
+  const handleClick = () => {
+    // goi hàm của thằng cha nè
+    addNewTodo(valueInput);
+    // input này là input đang nhờ react quản lý -> state đó
+  };
 
   const [valueInput, setValueInput] = useState("NAD");
   const handleOnChange = (name) => {
@@ -20,7 +26,7 @@ const TodoNew = (props) => {
         placeholder="Enter your task"
         onChange={(event) => handleOnChange(event.target.value)}
       />
-      <button onClick={addNewTodo}>Add</button>
+      <button onClick={handleClick}>Add</button>
       <div>My text input is {valueInput}</div>
     </div>
   );

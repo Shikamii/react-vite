@@ -1,5 +1,5 @@
 const TodoData = (props) => {
-  console.log({ props });
+  // console.log({ props });
 
   const { name, age, data } = props;
   return (
