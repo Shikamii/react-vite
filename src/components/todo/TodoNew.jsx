@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const TodoNew = (props) => {
   console.log({ props });
   const { addNewTodo } = props;
@@ -5,8 +7,11 @@ const TodoNew = (props) => {
   // const handleOnChange = (event) => {
   //   console.log(event.target.value);
   // };
+
+  const [valueInput, setValueInput] = useState("NAD");
   const handleOnChange = (name) => {
-    console.log(name);
+    // console.log(name);
+    setValueInput(name);
   };
   return (
     <div className="todo_new">
@@ -16,6 +21,7 @@ const TodoNew = (props) => {
         onChange={(event) => handleOnChange(event.target.value)}
       />
       <button onClick={addNewTodo}>Add</button>
+      <div>My text input is {valueInput}</div>
     </div>
   );
 };
