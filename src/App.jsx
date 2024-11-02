@@ -9,11 +9,15 @@ const App = () => {
     company: "HBlab",
     address: "219 trung kinh ",
   };
+
+  const addNewTodo = () => {
+    alert("xin chao");
+  };
   return (
     <>
       <div className="todo_container">
         <div className="todo_title">Todo List</div>
-        <TodoNew />
+        <TodoNew addNewTodo={addNewTodo} />
         <TodoData name={name} age={age} data={data} />
         <div className="todo_image">
           <img src={reactLogo} alt="" className="logo react" />
