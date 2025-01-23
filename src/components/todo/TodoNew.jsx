@@ -12,6 +12,7 @@ const TodoNew = (props) => {
     // goi hàm của thằng cha nè
     addNewTodo(valueInput);
     // truyền valueInput vào hàm của thằng cha
+    setValueInput(""); // reset lại giá trị của input
   };
 
   const [valueInput, setValueInput] = useState("NAD");
@@ -26,9 +27,10 @@ const TodoNew = (props) => {
         placeholder="Enter your task"
         onChange={(event) => handleOnChange(event.target.value)}
         // lấy giá trị của input rồi truyền vào hàm handleOnChange
+        value={valueInput}
       />
       <button onClick={handleClick}>Add</button>
-      // khi click vào button thì gọi hàm handleClick -> gọi hàm của thằng cha
+      {/*khi click vào button thì gọi hàm handleClick - gọi hàm của thằng cha*/}
       <div>My text input is {valueInput}</div>
     </div>
   );
