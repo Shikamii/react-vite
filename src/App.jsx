@@ -21,7 +21,10 @@ const App = () => {
       id: randomIntFromInterval(1, 10000),
       name: name,
     };
-
+    // ở thằng cha sẽ nhận được giá trị name từ thằng con TodoNew
+    // rồi cập nhật lại giá trị của todoList qua hàm setTodoList
+    // giá trị của todolist được thay đổi, cập nhật thêm
+    // dẫn đến props.todoList ở thằng con TodoData cũng thay đổi -> re-render lại data
     setTodoList([...todoList, newToDo]);
   };
   const randomIntFromInterval = (min, max) => {

@@ -11,13 +11,13 @@ const TodoNew = (props) => {
   const handleClick = () => {
     // goi hàm của thằng cha nè
     addNewTodo(valueInput);
-    // input này là input đang nhờ react quản lý -> state đó
+    // truyền valueInput vào hàm của thằng cha
   };
 
   const [valueInput, setValueInput] = useState("NAD");
   const handleOnChange = (name) => {
     // console.log(name);
-    setValueInput(name);
+    setValueInput(name); // cập nhật giá trị của input
   };
   return (
     <div className="todo_new">
@@ -25,8 +25,10 @@ const TodoNew = (props) => {
         type="text"
         placeholder="Enter your task"
         onChange={(event) => handleOnChange(event.target.value)}
+        // lấy giá trị của input rồi truyền vào hàm handleOnChange
       />
       <button onClick={handleClick}>Add</button>
+      // khi click vào button thì gọi hàm handleClick -> gọi hàm của thằng cha
       <div>My text input is {valueInput}</div>
     </div>
   );
