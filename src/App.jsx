@@ -12,8 +12,8 @@ const App = () => {
   };
 
   const [todoList, setTodoList] = useState([
-    { id: 1, name: "Learning React" },
-    { id: 2, name: "Watching Youtube" },
+    // { id: 1, name: "Learning React" },
+    // { id: 2, name: "Watching Youtube" },
   ]);
   const addNewTodo = (name) => {
     // alert(`xin chao ${name}`);
@@ -36,10 +36,14 @@ const App = () => {
       <div className="todo_container">
         <div className="todo_title">Todo List</div>
         <TodoNew addNewTodo={addNewTodo} />
-        <TodoData name={name} age={age} data={data} todoList={todoList} />
-        <div className="todo_image">
-          <img src={reactLogo} alt="" className="logo react" />
-        </div>
+
+        {todoList.length > 0 ? (
+          <TodoData todoList={todoList} />
+        ) : (
+          <div className="todo_image">
+            <img src={reactLogo} alt="" className="logo react" />
+          </div>
+        )}
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 const TodoData = (props) => {
   // console.log({ props });
 
-  const { name, age, data, todoList } = props;
+  const { todoList } = props;
   return (
     <div className="todo_data">
       {/* <div>My name is {name}</div>
