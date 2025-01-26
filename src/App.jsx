@@ -5,6 +5,7 @@ import TodoData from "./components/todo/TodoData";
 import { useState } from "react";
 import Header from "./components/layout/header";
 import Footer from "./components/layout/footer";
+import { Outlet } from "react-router-dom";
 const App = () => {
   const name = "Nguyen Anh Duc";
   const age = 25;
@@ -53,6 +54,7 @@ const App = () => {
           </div>
         )}
       </div>
+      <Outlet />
       <Footer />
     </>
   );
