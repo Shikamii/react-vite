@@ -27,6 +27,11 @@ const App = () => {
     // dẫn đến props.todoList ở thằng con TodoData cũng thay đổi -> re-render lại data
     setTodoList([...todoList, newToDo]);
   };
+
+  const removeTodo = (id) => {
+    const newTodoList = todoList.filter((item) => item.id !== id);
+    setTodoList(newTodoList);
+  };
   const randomIntFromInterval = (min, max) => {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -38,7 +43,7 @@ const App = () => {
         <TodoNew addNewTodo={addNewTodo} />
 
         {todoList.length > 0 ? (
-          <TodoData todoList={todoList} />
+          <TodoData todoList={todoList} removeTodo={removeTodo} />
         ) : (
           <div className="todo_image">
             <img src={reactLogo} alt="" className="logo react" />
